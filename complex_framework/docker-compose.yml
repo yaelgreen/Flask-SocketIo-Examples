@@ -1,0 +1,21 @@
+version: '2'
+
+networks:
+  backend:
+    driver: bridge
+
+services:
+  flask-app:
+    image: complex_example:latest
+    ports:
+      - 8888:8888
+    links:
+      - redis_service
+    environment:
+      - REDIS_URL=redis_service
+    networks:
+      - backend
+  redis_service:
+    image: redis:latest
+    networks:
+      - backend
