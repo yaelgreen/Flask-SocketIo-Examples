@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Working with Flask and SocketIO</title>
+</head>
+
+<body>
+  <div id="logger"></div>
+  <script src="https://cdn.socket.io/3.1.3/socket.io.js"></script>
+  <script>
+    (function init() {
+      var socket = io({transports: ['websocket']})
+      var loggerElement = document.getElementById('logger')
+
+      socket.on('log', function(payload) {
+        console.log(payload);
+        var dataElement = document.createElement('pre')
+        dataElement.innerHTML = payload.data
+        loggerElement.appendChild(dataElement)
+      })
+    })()
+  </script>
+</body>
+
+</html>
