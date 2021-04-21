@@ -1,0 +1,6 @@
+flask_cors~=3.0.10
+gevent~=21.1.2
+flask-socketio~=5.0.1
+uWSGI~=2.0.19.1
+python-engineio~=4.0.1
+python-socketio~=5.1.0
