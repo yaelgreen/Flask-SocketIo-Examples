@@ -2,7 +2,7 @@
 
 ###### Architecture diagram:
 
-![diagram](/basic_framework_diagram.png)
+![diagram](Flask-SocketIo-Examples/basic_framework/basic_framework_diagram.png)
 
 ###### Goal:
 Our goal is to Send updates from the flask app to the browser.
