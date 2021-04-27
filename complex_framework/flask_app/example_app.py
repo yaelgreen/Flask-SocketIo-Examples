@@ -32,7 +32,7 @@ def publish_event(signum):
         'status': 'fire event',
         'time': dt.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
     }
-    print(f"publish event via redis clinet: {message}")
+    print(f"publish event via redis client: {message}")
     client = PubSubClient(
         app.config['REDIS_URL'],
         app.config['REDIS_PORT'])
@@ -69,7 +69,7 @@ def receive_signal(signum: int):
         signum: The number for the signal
     """
     msg = f"received signal on signal number {signum}"
-    print(f"Uwsgi signal recived with message: {msg}")
+    print(msg)
     socketio.emit('log', dict(data=msg), broadcast=True)
 
 
